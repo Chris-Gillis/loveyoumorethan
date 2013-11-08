@@ -6,20 +6,20 @@ module.exports = function(grunt) {
             jade: {
                 files: ['app/views/**'],
                 options: {
-                    livereload: true,
+                    livereload: true
                 }
             },
             js: {
                 files: ['public/js/**', 'app/**/*.js'],
                 tasks: ['jshint'],
                 options: {
-                    livereload: true,
+                    livereload: true
                 }
             },
             html: {
                 files: ['public/views/**'],
                 options: {
-                    livereload: true,
+                    livereload: true
                 }
             },
             css: {
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                     args: [],
                     ignoredFiles: ['README.md', 'node_modules/**', '.DS_Store'],
                     watchedExtensions: ['js'],
-                    watchedFolders: ['app', 'config'],
+                    watchedFolders: ['app', 'config', '.'],
                     debug: true,
                     delayTime: 1,
                     env: {
@@ -65,6 +65,13 @@ module.exports = function(grunt) {
             test: {
                 NODE_ENV: 'test'
             }
+        },
+        bower: {
+            install: {
+                options: {
+                    targetDir: 'public/javascripts/lib'
+                }
+            }
         }
     });
 
@@ -75,6 +82,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-bower-task');
 
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
@@ -84,4 +92,7 @@ module.exports = function(grunt) {
 
     //Test task.
     grunt.registerTask('test', ['env:test', 'mochaTest']);
+
+    //Dev server only
+    grunt.registerTask('dev', ['nodemon']);
 };

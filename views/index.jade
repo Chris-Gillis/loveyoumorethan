@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Love You More Than
+  form()
+      label(for="fromHandle") Your twitter handle
+      input(type="text", id="fromHandle")
+      br
+      label(for="toHandle") Who do you love?
+      input(type="text", id="toHandle")
+      br
+      lable(for="message") You love them more than
+      input(type="text", id="message")
+      br
+      input(type="submit", value="Share your love!")
