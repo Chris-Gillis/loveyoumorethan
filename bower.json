@@ -3,8 +3,7 @@
     "version": "0.1.0",
     "dependencies": {
         "riotjs": "*",
-        "lodash": "2.2.1",
-        "requirejs": "*"
+        "lodash": "2.2.1"
     }
 }
 
