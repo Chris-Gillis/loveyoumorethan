@@ -13,7 +13,12 @@ Then:
 3. run "npm install"
 
 You can start the server with
+    
     node app.js
     
 Or with
+
     grunt
+
+which uses nodemon so you don't have to restart the server when you change it 
+(though that in particular is not yet working properly).
