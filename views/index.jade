@@ -1,13 +1,18 @@
 extends layout
 
 block content
-  h1 Love You More Than
-  form
-      label(for="fromHandle") Your twitter handle
-      input(type="text", id="fromHandle")
-      label(for="toHandle") Who do you love?
-      input(type="text", id="toHandle")
-      lable(for="message") You love them more than
-      input(type="text", id="message")
-      br
-      input(type="submit", value="Share your love!", class='btn btn-primary')
+  div.container
+    div.row
+        h1.col-lg-4 Love You More Than
+    div.row
+        form.form(role="form")
+          div.form-group
+            label(for="fromHandle", class="sr-only") Your twitter handle
+            input.form-control(type="text", id="fromHandle", placeholder="Your twitter handle")
+          div.form-group
+            label(for="toHandle", class="sr-only") Who do you love?
+            input.form-control(type="text", id="toHandle", placeholder="Your love's twitter handle")
+          div.form-group
+            label(for="message", class="sr-only") You love them more than
+            input.form-control(type="text", id="message", placeholder="You love Them more than....")
+          button(class="btn btn-primary", type="submit") Share your love!
