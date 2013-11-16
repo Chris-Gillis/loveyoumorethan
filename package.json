@@ -21,5 +21,6 @@
     "grunt-concurrent": "~0.4.1",
     "grunt-env": "~0.4.0",
     "grunt-bower-task": "~0.3.2"
-  }
+  },
+  "engine": "node 0.10.21"
 }
